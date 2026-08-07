@@ -1368,3 +1368,252 @@
   @media (max-width:860px){
     .showcase-card.fade-up.in, .showcase-card.fade-up.in:hover{transform:none;}
   }
+
+  /* ================================================================
+     AGENT 1 — Navigation mobile (hamburger) & structure globale
+     ================================================================ */
+
+  /* ---------- hamburger button ---------- */
+  .nav-hamburger{
+    display:none; appearance:none; -webkit-appearance:none; border:0; background:transparent; cursor:pointer;
+    width:38px; height:38px; padding:8px; flex-direction:column; justify-content:center; align-items:center; gap:5px;
+  }
+  .nav-hamburger span{
+    display:block; width:20px; height:2px; border-radius:2px; background:var(--text);
+    transition:transform .3s var(--ease-out), opacity .2s var(--ease);
+  }
+  /* mobile close button inside nav-links */
+  .nav-close{
+    display:none; appearance:none; -webkit-appearance:none; border:0; background:transparent; cursor:pointer;
+    color:#fff; padding:6px;
+  }
+  /* CTA inside mobile menu */
+  .nav-mobile-cta{display:none !important;}
+  /* overlay */
+  .nav-overlay{
+    display:none; position:fixed; inset:0; z-index:90; background:rgba(15,12,36,.5);
+    backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+    opacity:0; transition:opacity .3s var(--ease);
+  }
+
+  @media (max-width:860px){
+    /* show hamburger, hide desktop nav links */
+    .nav-hamburger{display:flex;}
+    .nav-links{
+      position:fixed; top:0; right:0; bottom:0; z-index:95;
+      width:min(320px, 85vw); background:linear-gradient(175deg,#241B5C,#3B2A99 55%,#5B3FD6);
+      display:flex !important; flex-direction:column; align-items:center; justify-content:center; gap:0;
+      padding:80px 32px 40px;
+      transform:translateX(100%); transition:transform .35s var(--ease-out);
+      box-shadow:-16px 0 60px rgba(10,5,40,.45);
+    }
+    .nav-links a{
+      display:block; width:100%; text-align:center; color:rgba(255,255,255,.85); font-size:17px;
+      padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-links a:hover{color:#fff;}
+    .nav-links a::after{display:none;}
+    .nav-links a.active{color:#fff;}
+    .nav-close{
+      display:flex; position:absolute; top:20px; right:20px; z-index:10;
+    }
+    /* mobile CTA button */
+    .nav-mobile-cta{
+      display:inline-flex !important; margin-top:24px;
+      background:#fff; color:var(--violet-deep); font-weight:800; font-size:15px;
+      padding:14px 28px; border-radius:100px; border-bottom:none;
+      box-shadow:0 8px 20px -6px rgba(10,5,40,.45);
+    }
+    .nav-mobile-cta:hover{color:var(--violet-deep) !important;}
+    /* overlay */
+    .nav-overlay{display:block;}
+    /* open state */
+    .nav-open .nav-links{transform:translateX(0);}
+    .nav-open .nav-overlay{opacity:1;}
+    /* hamburger → X */
+    .nav-open .nav-hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .nav-open .nav-hamburger span:nth-child(2){opacity:0;}
+    .nav-open .nav-hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  }
+
+  /* ---------- structure globale responsive ---------- */
+  @media (max-width:860px){
+    section{padding:88px 24px;}
+    .wrap{padding:0 24px;}
+    .section-head{margin-bottom:48px;}
+    .section-head h2{margin-bottom:12px;}
+  }
+  @media (max-width:480px){
+    section{padding:64px 18px;}
+    .wrap{padding:0 18px;}
+    .section-head{margin-bottom:36px;}
+    .section-head p{font-size:15.5px;}
+  }
+  @media (max-width:380px){
+    section{padding:52px 14px;}
+    .wrap{padding:0 14px;}
+  }
+
+  /* ================================================================
+     AGENT 2 — Hero / Method / Features / Economy / Showcase
+     ================================================================ */
+
+  /* ---------- hero: tablette & mobile ---------- */
+  @media (max-width:860px){
+    .hero{padding:110px 24px 0;}
+    .hero-inner{gap:36px; padding-bottom:40px;}
+    .hero h1{margin-bottom:18px;}
+    .hero-sub{font-size:16.5px; margin-bottom:28px;}
+  }
+  @media (max-width:520px){
+    .hero{padding:90px 18px 0;}
+    .hero-inner{gap:24px; padding-bottom:30px;}
+    .hero-sub{font-size:15px; max-width:100%; margin-bottom:22px;}
+    .hero-eyebrow{font-size:11px; padding:6px 12px; margin-bottom:18px;}
+  }
+  @media (max-width:480px){
+    .hero-ctas{flex-direction:column; gap:10px;}
+    .btn-primary, .btn-ghost{width:100%; text-align:center; padding:15px 24px; font-size:15.5px;}
+    .hero-proof p{font-size:12.5px;}
+  }
+  @media (max-width:380px){
+    .hero{padding:80px 14px 0;}
+    .hero-visual{height:460px; transform:scale(.75);}
+    .phone-stage{width:170px; height:360px; margin-right:80px;}
+    .hero-otter-stage{width:280px; height:280px;}
+  }
+
+  /* ---------- method: tablette ---------- */
+  @media (max-width:860px){
+    .method-grid{max-width:500px;}
+    .method-card{padding:28px 24px 30px;}
+  }
+  @media (max-width:480px){
+    .method-grid{max-width:100%;}
+    .method-card p{max-width:100%;}
+  }
+
+  /* ---------- features: tablette & mobile ---------- */
+  @media (max-width:860px){
+    .feat-card{padding:24px;}
+    .feat-card h3{font-size:18px;}
+    .feat-card p{font-size:14px;}
+  }
+  @media (max-width:480px){
+    .feat-card{padding:22px 18px;}
+    .feat-card.feat-featured .feat-hearts{padding:10px 12px;}
+    .feat-card.feat-featured .feat-hearts svg{width:18px; height:18px;}
+  }
+
+  /* ---------- economy: tablette & mobile ---------- */
+  @media (max-width:480px){
+    .eco-panel{padding:20px 16px;}
+    .eco-panel-head h4{font-size:17.5px;}
+  }
+  @media (max-width:380px){
+    .eco-leagues{grid-template-columns:repeat(3,1fr); gap:10px;}
+    .eco-league span{font-size:9px;}
+    .eco-figs{grid-template-columns:1fr;}
+    .eco-cycle{padding:12px;}
+    .eco-use{padding:12px 13px; gap:10px;}
+    .eco-use .eco-use-txt b{font-size:14px;}
+    .eco-use .eco-use-txt span{font-size:12px;}
+  }
+
+  /* ---------- showcase: mobile ---------- */
+  @media (max-width:520px){
+    .showcase{padding:88px 18px;}
+    .showcase h2{margin-bottom:14px;}
+    .showcase p{font-size:15.5px; margin-bottom:22px;}
+    .showcase-list li{font-size:14px;}
+  }
+  @media (max-width:380px){
+    .showcase{padding:64px 14px;}
+    .showcase-otter-stage{width:72px; height:72px; top:-40px;}
+  }
+
+  /* ================================================================
+     AGENT 3 — Revisions / Beyond / Know / Support / Stats / CTA / Contact / Footer
+     ================================================================ */
+
+  /* ---------- revisions: mobile ---------- */
+  @media (max-width:560px){
+    .revise-copy h3{font-size:19px;}
+    .revise-copy > p{font-size:14.5px;}
+    .revise-states{gap:8px;}
+    .state-chip{font-size:12.5px; padding:7px 12px 7px 10px;}
+    .mode-card{padding:16px 18px; gap:12px;}
+    .mode-card h4{font-size:15.5px;}
+    .mode-card p{font-size:13px;}
+    .mode-ic{width:38px; height:38px; border-radius:11px;}
+    .mode-ic svg{width:19px; height:19px;}
+  }
+
+  /* ---------- beyond: mobile ---------- */
+  @media (max-width:560px){
+    .beyond-grid{max-width:100%;}
+    .by-card{padding:22px 20px;}
+    .by-card h3{font-size:18px;}
+    .bv-player{padding:13px;}
+    .bv-name{padding:14px 12px;}
+    .bv-name-ar{font-size:28px;}
+    .bv-name-tr{font-size:15px;}
+  }
+
+  /* ---------- support / chat: mobile ---------- */
+  @media (max-width:560px){
+    .support-copy h2{font-size:24px;}
+    .support-copy > p{font-size:15px;}
+    .support-points li{font-size:14px; gap:10px;}
+    .chat-head{padding:14px 16px;}
+    .chat-body{padding:16px;}
+    .bub{max-width:88%; padding:10px 13px; font-size:13.5px;}
+    .chat-input{padding:11px 14px;}
+    .chat-field{padding:9px 13px; font-size:13px;}
+    .chat-send{width:34px; height:34px;}
+    .chat-send svg{width:15px; height:15px;}
+  }
+  @media (max-width:380px){
+    .chat{border-radius:20px;}
+    .chat-body{padding:14px 12px; gap:10px;}
+    .bub{max-width:92%; font-size:13px;}
+  }
+
+  /* ---------- stats: mobile ---------- */
+  @media (max-width:480px){
+    .stats{padding:64px 18px;}
+    .stat span{font-size:12.5px;}
+  }
+
+  /* ---------- final CTA: mobile ---------- */
+  @media (max-width:560px){
+    .final-cta{padding:100px 18px 88px;}
+    .final-cta .otter-wrap{width:150px; height:150px; margin-bottom:24px;}
+    .final-cta p{font-size:16px; margin-bottom:28px;}
+    .final-ctas{flex-direction:column; align-items:center; gap:12px;}
+    .btn-cta-violet{width:100%; max-width:320px; justify-content:center; padding:14px 24px 14px 20px; font-size:15.5px;}
+    .btn-cta-violet .btn-cta-eyebrow{font-size:10px;}
+    .btn-cta-violet .btn-cta-store{font-size:15.5px;}
+  }
+  @media (max-width:380px){
+    .final-cta{padding:80px 14px 72px;}
+    .final-cta .otter-wrap{width:130px; height:130px;}
+  }
+
+  /* ---------- contact: mobile ---------- */
+  @media (max-width:480px){
+    .contact{padding:64px 16px;}
+    .contact-card{padding:16px 18px; gap:12px;}
+    .contact-icon{width:42px; height:42px; border-radius:11px;}
+    .contact-icon svg{width:20px; height:20px;}
+    .contact-value{font-size:14px;}
+  }
+
+  /* ---------- footer: mobile ---------- */
+  @media (max-width:480px){
+    footer{padding:44px 18px 28px;}
+    .footer-tag{font-size:12.5px; max-width:200px;}
+    .footer-links{gap:24px;}
+    .footer-col h4{margin-bottom:12px; font-size:11.5px;}
+    .footer-col a{font-size:13px; margin-bottom:9px;}
+  }
