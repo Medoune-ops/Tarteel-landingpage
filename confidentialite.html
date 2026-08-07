@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Tarteel</title>
+<meta name="description" content="Politique de confidentialité de l'application Tarteel : quelles données sont collectées, pourquoi, et comment les contrôler.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .legal-page{
+    max-width:760px;
+    margin:0 auto;
+    padding:64px 24px 96px;
+  }
+  .legal-card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:44px 40px 52px;
+    box-shadow:0 30px 60px -30px rgba(20,15,60,.18);
+  }
+  @media (max-width:640px){
+    .legal-card{padding:30px 22px 38px;}
+    .legal-page{padding:40px 14px 64px;}
+  }
+  .legal-page h1{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:800;
+    font-size:clamp(28px,4.5vw,38px);
+    color:var(--text);
+    letter-spacing:-.01em;
+    margin-bottom:8px;
+  }
+  .legal-updated{
+    color:var(--text-2);
+    font-size:14.5px;
+    font-weight:700;
+    margin-bottom:24px;
+  }
+  .legal-page section{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+  }
+  .legal-page section p:last-child, .legal-page section ul:last-child{margin-bottom:0;}
+  .legal-page section:first-of-type{
+    margin-top:0;
+    padding-top:0;
+    border-top:none;
+  }
+  .legal-page h2{
+    font-family:'Baloo 2',sans-serif;
+    font-weight:700;
+    font-size:19.5px;
+    color:var(--text);
+    letter-spacing:-.005em;
+    margin-bottom:7px;
+  }
+  .legal-page p{
+    color:var(--text);
+    font-size:15.5px;
+    line-height:1.6;
+    font-weight:500;
+    margin-bottom:8px;
+  }
+  .legal-page ul{
+    margin:12px 0 4px;
+    padding-left:0;
+    list-style:none;
+  }
+  .legal-page ul li{
+    position:relative;
+    padding-left:24px;
+    color:var(--text);
+    font-size:15.5px;
+    line-height:1.7;
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .legal-page ul li::before{
+    content:"";
+    position:absolute;
+    left:4px;
+    top:9px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--violet);
+  }
+  .legal-page ul li strong{color:var(--text);}
+  .legal-page a{color:var(--violet-dark); font-weight:700; text-decoration:underline;}
+  .legal-page a:hover{color:var(--violet);}
+  .footer-col a.legal-active{color:#fff;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <img id="navLogo" width="34" height="34" alt="Logo Tarteel" data-i18n-alt="alt.logo" style="border-radius:9px;">
+        <span class="logotype">Tarteel</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html#methode" data-i18n="nav.method">Méthode</a>
+      <a href="index.html#fonctionnalites" data-i18n="nav.features">Fonctionnalités</a>
+      <a href="index.html#mascotte" data-i18n="nav.mascot">La mascotte</a>
+      <a href="index.html#revisions" data-i18n="nav.revisions">Révisions</a>
+      <a href="index.html#savoir" data-i18n="nav.know">Savoir</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="true" lang="fr">FR</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+      <a href="index.html#telecharger" class="nav-cta" data-i18n="nav.cta">Commencer gratuitement</a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-page fade-up" id="legalMain">
+  <div class="legal-card">
+    <h1 data-i18n="legal.title">Politique de confidentialité</h1>
+    <p class="legal-updated" data-i18n="legal.updated">Dernière mise à jour : 28 juillet 2026</p>
+
+    <section>
+      <h2 data-i18n="p.h1">1. Qui nous sommes</h2>
+      <p data-i18n="p.p1">Cette politique explique quelles données Tarteel collecte, pourquoi, et comment vous pouvez les contrôler.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h2">2. Données que nous collectons</h2>
+      <p data-i18n-html="p.p2a"><strong>Compte</strong> : adresse email, mot de passe (stocké de façon chiffrée, jamais en clair), nom affiché, nom d'utilisateur optionnel, langue et fuseau horaire.</p>
+      <p data-i18n-html="p.p2b"><strong>Progression d'apprentissage</strong> : leçons complétées, scores de récitation, séries (streaks), objectifs, historique d'activité quotidienne.</p>
+      <p data-i18n-html="p.p2c"><strong>Voix</strong> : lorsque vous activez la reconnaissance vocale, votre enregistrement est envoyé à notre service de transcription pour évaluer votre récitation, puis n'est pas conservé après traitement.</p>
+      <p data-i18n-html="p.p2d"><strong>Notifications</strong> : si vous autorisez les notifications, un identifiant technique d'appareil est stocké pour pouvoir vous envoyer des rappels.</p>
+      <p data-i18n-html="p.p2e"><strong>Support</strong> : les messages que vous envoyez à notre support sont conservés pour pouvoir vous répondre.</p>
+      <p data-i18n="p.p2f">Nous ne collectons pas votre date de naissance, votre localisation précise, ni de données biométriques.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h3">3. Comment nous utilisons ces données</h2>
+      <p data-i18n="p.p3">Ces données servent uniquement à faire fonctionner l'application : afficher votre progression, calculer vos scores, vous envoyer des rappels si vous les avez activés, et répondre à vos demandes de support.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h4">4. Partage avec des tiers</h2>
+      <p data-i18n="p.p4">Nous utilisons des prestataires techniques pour faire fonctionner certaines fonctionnalités :</p>
+      <ul>
+        <li data-i18n-html="p.li1"><strong>Expo</strong> (notifications push) — reçoit un identifiant technique d'appareil pour délivrer les notifications.</li>
+        <li data-i18n-html="p.li2"><strong>Resend</strong> (email) — reçoit votre adresse email uniquement pour l'envoi d'emails liés à votre compte (ex. réinitialisation de mot de passe).</li>
+      </ul>
+      <p data-i18n="p.p4b">Nous ne vendons jamais vos données à des tiers, et ne les partageons pas à des fins publicitaires.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h5">5. Visibilité entre utilisateurs</h2>
+      <p data-i18n="p.p5">Si vous rejoignez une ligue, votre nom d'utilisateur (ou nom affiché) et votre score hebdomadaire sont visibles par les autres membres de la même ligue. Vous pouvez désactiver la visibilité de votre profil et d'autres options depuis les réglages de confidentialité de l'application.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h6">6. Conservation des données</h2>
+      <p data-i18n="p.p6">Vos données sont conservées tant que votre compte existe. Lorsque vous supprimez votre compte, toutes vos données personnelles sont supprimées définitivement de nos serveurs.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h7">7. Vos droits</h2>
+      <p data-i18n="p.p7">Vous pouvez à tout moment : consulter vos données depuis l'application, modifier vos préférences de confidentialité, désactiver les notifications, et supprimer définitivement votre compte et toutes les données associées.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h8">8. Enfants et comptes familiaux</h2>
+      <p data-i18n="p.p8">Tarteel s'adresse aux apprenants dès 4 ans. Pour les utilisateurs mineurs, le compte doit être créé et géré par un parent ou tuteur légal, qui reste responsable des données saisies dans l'application au nom de l'enfant.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h9">9. Sécurité</h2>
+      <p data-i18n="p.p9">Les mots de passe sont stockés sous forme chiffrée (hachage argon2), jamais en clair. Les communications entre l'application et nos serveurs sont chiffrées.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h10">10. Modifications de cette politique</h2>
+      <p data-i18n="p.p10">Cette politique peut évoluer, notamment si de nouvelles fonctionnalités sont ajoutées à l'application. La date de mise à jour en haut de cette page reflète la dernière version.</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="p.h11">11. Contact</h2>
+      <p data-i18n="p.p11">Pour toute question sur vos données, contactez-nous depuis la section Support de l'application, ou via la page Contact du site.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <img id="footerLogo" width="30" height="30" alt="Logo Tarteel" data-i18n-alt="alt.logo" style="border-radius:8px;">
+        <span class="logotype">Tarteel</span>
+      </div>
+      <p class="footer-tag" data-i18n="footer.tag">L'app qui t'apprend le Coran en 5 minutes par jour. Totalement gratuite.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4 data-i18n="footer.product">Produit</h4>
+        <a href="index.html#methode" data-i18n="nav.method">Méthode</a>
+        <a href="index.html#fonctionnalites" data-i18n="nav.features">Fonctionnalités</a>
+        <a href="index.html#revisions" data-i18n="nav.revisions">Révisions</a>
+        <a href="index.html#explorer" data-i18n="nav.explore">Lecture &amp; écoute</a>
+        <a href="index.html#savoir" data-i18n="nav.know">Savoir</a>
+        <a href="index.html#support" data-i18n="nav.support">Support</a>
+        <a href="index.html#telecharger" data-i18n="footer.download">Télécharger</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.legal">Légal</h4>
+        <a href="confidentialite.html" class="legal-active" data-i18n="footer.privacy">Confidentialité</a>
+        <a href="conditions.html" data-i18n="footer.terms">Conditions</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.follow">Nous suivre</h4>
+        <a href="https://www.instagram.com/tarteel.14" target="_blank" rel="noopener noreferrer" class="footer-social">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.78.22-2.42.46a4.9 4.9 0 0 0-1.77 1.15A4.9 4.9 0 0 0 2.54 5.44c-.24.64-.4 1.36-.46 2.42C2.01 8.92 2 9.26 2 12s.01 3.06.06 4.12c.05 1.06.22 1.78.46 2.42.25.66.58 1.22 1.15 1.77.55.57 1.11.9 1.77 1.15.64.24 1.36.4 2.42.46 1.06.05 1.4.06 4.12.06s3.06-.01 4.12-.06c1.06-.05 1.78-.22 2.42-.46a4.9 4.9 0 0 0 1.77-1.15 4.9 4.9 0 0 0 1.15-1.77c.24-.64.4-1.36.46-2.42.05-1.06.06-1.4.06-4.12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.78-.46-2.42a4.9 4.9 0 0 0-1.15-1.77A4.9 4.9 0 0 0 18.56 2.5c-.64-.24-1.36-.4-2.42-.46C15.08 2.01 14.74 2 12 2Zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.2 1.86.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.14.36.3.88.34 1.86.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.2 1.5-.34 1.86a3.1 3.1 0 0 1-.75 1.15 3.1 3.1 0 0 1-1.15.75c-.36.14-.88.3-1.86.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.2-1.86-.34a3.1 3.1 0 0 1-1.15-.75 3.1 3.1 0 0 1-.75-1.15c-.14-.36-.3-.88-.34-1.86-.05-1.05-.06-1.37-.06-4.04s.01-2.99.06-4.04c.04-.98.2-1.5.34-1.86.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.36-.14.88-.3 1.86-.34C9.01 3.81 9.33 3.8 12 3.8Zm0 3.06a5.14 5.14 0 1 0 0 10.28 5.14 5.14 0 0 0 0-10.28Zm0 8.48a3.34 3.34 0 1 1 0-6.68 3.34 3.34 0 0 1 0 6.68Zm5.34-8.68a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.tiktok.com/@.tarteel04" target="_blank" rel="noopener noreferrer" class="footer-social">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2h-3.2v13.7a2.9 2.9 0 1 1-2.05-2.77V9.63a6.1 6.1 0 1 0 5.25 6.05V8.32a7.6 7.6 0 0 0 4.4 1.4V6.5a4.4 4.4 0 0 1-4.4-4.4Z"/></svg>
+          TikTok
+        </a>
+        <a href="https://x.com/tarteel04" target="_blank" rel="noopener noreferrer" class="footer-social">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.9 10.4 21 2h-2.1l-6.15 7.3L7.87 2H2l7.45 10.9L2 22h2.1l6.5-7.7 5.2 7.7H21l-7.1-11.6Zm-2.3 2.73-.75-1.08L4.85 3.6h2.6l4.83 6.94.75 1.08 6.28 9.02h-2.6l-5.11-7.5Z"/></svg>
+          X (Twitter)
+        </a>
+        <a href="mailto:tarteel.groupe@gmail.com" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6.5 9-6.5"/></svg>
+          <span data-i18n="footer.email">Nous écrire</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer.copy">© 2026 Tarteel. Conçu pour l'apprentissage du Coran.</span>
+    <span data-i18n="footer.city">Dakar, Sénégal</span>
+  </div>
+</footer>
+
+<script src="legal-logo.js"></script>
+<script>
+  document.getElementById('navLogo').src = LOGO_URI;
+  document.getElementById('footerLogo').src = LOGO_URI;
+  (function(){
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = LOGO_URI;
+    document.head.appendChild(link);
+  })();
+
+  const I18N = {
+    fr: {
+      'meta.title': 'Politique de confidentialité — Tarteel',
+      'meta.desc': "Politique de confidentialité de l'application Tarteel : quelles données sont collectées, pourquoi, et comment les contrôler.",
+      'nav.method': 'Méthode',
+      'nav.features': 'Fonctionnalités',
+      'nav.mascot': 'La mascotte',
+      'nav.revisions': 'Révisions',
+      'nav.explore': 'Lecture & écoute',
+      'nav.know': 'Savoir',
+      'nav.support': 'Support',
+      'nav.contact': 'Contact',
+      'nav.cta': 'Commencer gratuitement',
+      'footer.tag': "L'app qui t'apprend le Coran en 5 minutes par jour. Totalement gratuite.",
+      'footer.product': 'Produit',
+      'footer.download': 'Télécharger',
+      'footer.legal': 'Légal',
+      'footer.follow': 'Nous suivre',
+      'footer.email': "Nous écrire",
+      'footer.privacy': 'Confidentialité',
+      'footer.terms': 'Conditions',
+      'footer.copy': "© 2026 Tarteel. Conçu pour l'apprentissage du Coran.",
+      'footer.city': 'Dakar, Sénégal',
+      'alt.logo': 'Logo Tarteel',
+      'legal.title': 'Politique de confidentialité',
+      'legal.updated': 'Dernière mise à jour : 28 juillet 2026',
+      'p.h1': '1. Qui nous sommes',
+      'p.p1': 'Cette politique explique quelles données Tarteel collecte, pourquoi, et comment vous pouvez les contrôler.',
+      'p.h2': '2. Données que nous collectons',
+      'p.p2a': "<strong>Compte</strong> : adresse email, mot de passe (stocké de façon chiffrée, jamais en clair), nom affiché, nom d'utilisateur optionnel, langue et fuseau horaire.",
+      'p.p2b': '<strong>Progression d’apprentissage</strong> : leçons complétées, scores de récitation, séries (streaks), objectifs, historique d’activité quotidienne.',
+      'p.p2c': "<strong>Voix</strong> : lorsque vous activez la reconnaissance vocale, votre enregistrement est envoyé à notre service de transcription pour évaluer votre récitation, puis n'est pas conservé après traitement.",
+      'p.p2d': "<strong>Notifications</strong> : si vous autorisez les notifications, un identifiant technique d'appareil est stocké pour pouvoir vous envoyer des rappels.",
+      'p.p2e': '<strong>Support</strong> : les messages que vous envoyez à notre support sont conservés pour pouvoir vous répondre.',
+      'p.p2f': 'Nous ne collectons pas votre date de naissance, votre localisation précise, ni de données biométriques.',
+      'p.h3': '3. Comment nous utilisons ces données',
+      'p.p3': "Ces données servent uniquement à faire fonctionner l'application : afficher votre progression, calculer vos scores, vous envoyer des rappels si vous les avez activés, et répondre à vos demandes de support.",
+      'p.h4': '4. Partage avec des tiers',
+      'p.p4': 'Nous utilisons des prestataires techniques pour faire fonctionner certaines fonctionnalités :',
+      'p.li1': '<strong>Expo</strong> (notifications push) — reçoit un identifiant technique d’appareil pour délivrer les notifications.',
+      'p.li2': "<strong>Resend</strong> (email) — reçoit votre adresse email uniquement pour l'envoi d'emails liés à votre compte (ex. réinitialisation de mot de passe).",
+      'p.p4b': 'Nous ne vendons jamais vos données à des tiers, et ne les partageons pas à des fins publicitaires.',
+      'p.h5': '5. Visibilité entre utilisateurs',
+      'p.p5': 'Si vous rejoignez une ligue, votre nom d’utilisateur (ou nom affiché) et votre score hebdomadaire sont visibles par les autres membres de la même ligue. Vous pouvez désactiver la visibilité de votre profil et d’autres options depuis les réglages de confidentialité de l’application.',
+      'p.h6': '6. Conservation des données',
+      'p.p6': 'Vos données sont conservées tant que votre compte existe. Lorsque vous supprimez votre compte, toutes vos données personnelles sont supprimées définitivement de nos serveurs.',
+      'p.h7': '7. Vos droits',
+      'p.p7': 'Vous pouvez à tout moment : consulter vos données depuis l’application, modifier vos préférences de confidentialité, désactiver les notifications, et supprimer définitivement votre compte et toutes les données associées.',
+      'p.h8': '8. Enfants et comptes familiaux',
+      'p.p8': "Tarteel s'adresse aux apprenants dès 4 ans. Pour les utilisateurs mineurs, le compte doit être créé et géré par un parent ou tuteur légal, qui reste responsable des données saisies dans l'application au nom de l'enfant.",
+      'p.h9': '9. Sécurité',
+      'p.p9': 'Les mots de passe sont stockés sous forme chiffrée (hachage argon2), jamais en clair. Les communications entre l’application et nos serveurs sont chiffrées.',
+      'p.h10': '10. Modifications de cette politique',
+      'p.p10': 'Cette politique peut évoluer, notamment si de nouvelles fonctionnalités sont ajoutées à l’application. La date de mise à jour en haut de cette page reflète la dernière version.',
+      'p.h11': '11. Contact',
+      'p.p11': 'Pour toute question sur vos données, contactez-nous depuis la section Support de l’application, ou via la page Contact du site.'
+    },
+    en: {
+      'meta.title': 'Privacy Policy — Tarteel',
+      'meta.desc': 'Privacy policy for the Tarteel application: what data is collected, why, and how you can control it.',
+      'nav.method': 'Method',
+      'nav.features': 'Features',
+      'nav.mascot': 'The mascot',
+      'nav.revisions': 'Review',
+      'nav.explore': 'Reading & listening',
+      'nav.know': 'Knowledge',
+      'nav.support': 'Support',
+      'nav.contact': 'Contact',
+      'nav.cta': 'Start for free',
+      'footer.tag': 'The app that teaches you the Quran in 5 minutes a day. Completely free.',
+      'footer.product': 'Product',
+      'footer.download': 'Download',
+      'footer.legal': 'Legal',
+      'footer.follow': 'Follow us',
+      'footer.email': 'Email us',
+      'footer.privacy': 'Privacy',
+      'footer.terms': 'Terms',
+      'footer.copy': '© 2026 Tarteel. Built for learning the Quran.',
+      'footer.city': 'Dakar, Senegal',
+      'alt.logo': 'Tarteel logo',
+      'legal.title': 'Privacy Policy',
+      'legal.updated': 'Last updated: July 28, 2026',
+      'p.h1': '1. Who we are',
+      'p.p1': 'This policy explains what data Tarteel collects, why, and how you can control it.',
+      'p.h2': '2. Data we collect',
+      'p.p2a': '<strong>Account</strong>: email address, password (stored encrypted, never in plain text), display name, optional username, language and time zone.',
+      'p.p2b': '<strong>Learning progress</strong>: completed lessons, recitation scores, streaks, goals, daily activity history.',
+      'p.p2c': '<strong>Voice</strong>: when you enable voice recognition, your recording is sent to our transcription service to assess your recitation, and is not kept after processing.',
+      'p.p2d': '<strong>Notifications</strong>: if you allow notifications, a technical device identifier is stored so we can send you reminders.',
+      'p.p2e': '<strong>Support</strong>: messages you send to our support team are kept so we can respond to you.',
+      'p.p2f': 'We do not collect your date of birth, precise location, or biometric data.',
+      'p.h3': '3. How we use this data',
+      'p.p3': "This data is used solely to operate the application: displaying your progress, calculating your scores, sending you reminders if you've enabled them, and responding to your support requests.",
+      'p.h4': '4. Sharing with third parties',
+      'p.p4': 'We use technical service providers to run certain features:',
+      'p.li1': '<strong>Expo</strong> (push notifications) — receives a technical device identifier to deliver notifications.',
+      'p.li2': '<strong>Resend</strong> (email) — receives your email address solely to send account-related emails (e.g. password reset).',
+      'p.p4b': 'We never sell your data to third parties, and never share it for advertising purposes.',
+      'p.h5': '5. Visibility between users',
+      'p.p5': 'If you join a league, your username (or display name) and your weekly score are visible to other members of the same league. You can turn off your profile visibility and other options from the app’s privacy settings.',
+      'p.h6': '6. Data retention',
+      'p.p6': 'Your data is kept for as long as your account exists. When you delete your account, all your personal data is permanently deleted from our servers.',
+      'p.h7': '7. Your rights',
+      'p.p7': 'At any time, you can: view your data from within the application, change your privacy preferences, turn off notifications, and permanently delete your account and all associated data.',
+      'p.h8': '8. Children and family accounts',
+      'p.p8': "Tarteel is designed for learners aged 4 and up. For minor users, the account must be created and managed by a parent or legal guardian, who remains responsible for the data entered into the application on the child's behalf.",
+      'p.h9': '9. Security',
+      'p.p9': 'Passwords are stored in encrypted form (argon2 hashing), never in plain text. Communications between the application and our servers are encrypted.',
+      'p.h10': '10. Changes to this policy',
+      'p.p10': "This policy may evolve, particularly as new features are added to the application. The update date at the top of this page reflects the latest version.",
+      'p.h11': '11. Contact',
+      'p.p11': 'For any questions about your data, contact us from the Support section of the application, or via the Contact page of the website.'
+    }
+  };
+
+  const LANG_KEY = 'tarteel-lang';
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const metaDesc = document.querySelector('meta[name="description"]');
+
+  function setLang(lang){
+    const dict = I18N[lang] || I18N.fr;
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const v = dict[el.getAttribute('data-i18n')];
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const v = dict[el.getAttribute('data-i18n-html')];
+      if (v !== undefined) el.innerHTML = v; /* chaînes littérales définies ci-dessus uniquement */
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+      const v = dict[el.getAttribute('data-i18n-alt')];
+      if (v !== undefined) el.setAttribute('alt', v);
+    });
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    if (metaDesc && dict['meta.desc']) metaDesc.setAttribute('content', dict['meta.desc']);
+    langButtons.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    try { localStorage.setItem(LANG_KEY, lang); } catch(e){}
+  }
+
+  langButtons.forEach(b=>{
+    b.addEventListener('click', ()=>setLang(b.dataset.lang));
+  });
+
+  let storedLang = null;
+  try { storedLang = localStorage.getItem(LANG_KEY); } catch(e){}
+  setLang(I18N[storedLang] ? storedLang : 'fr');
+
+  requestAnimationFrame(()=>{
+    document.getElementById('legalMain').classList.add('in');
+  });
+</script>
+
+</body>
+</html>
