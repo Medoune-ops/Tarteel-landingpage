@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Rejoins-moi sur Tarteel</title>
+<meta name="description" content="Un ami t'invite sur Tarteel pour apprendre le Coran ensemble.">
+<meta property="og:title" content="Rejoins-moi sur Tarteel">
+<meta property="og:description" content="Apprenons le Coran ensemble : ajoute-moi en ami sur Tarteel.">
+<meta property="og:image" content="https://tarteel.sn/assets/logo.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<!-- Chemins absolus : la page est servie sous /f/<code> (réécriture vercel.json). -->
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .invite-page{max-width:460px; margin:0 auto; padding:56px 20px 72px; text-align:center;}
+  .invite-card{
+    background:var(--card-bg); border:1px solid var(--border); border-radius:24px;
+    padding:36px 28px 30px; box-shadow:0 30px 60px -30px rgba(20,15,60,.18);
+  }
+  .invite-logo{width:72px; height:72px; border-radius:18px; margin:0 auto 18px; display:block;}
+  .invite-page h1{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(24px,5vw,30px); color:var(--text); margin-bottom:8px;}
+  .invite-page p{color:var(--text-2); font-size:15.5px; line-height:1.6; font-weight:600;}
+  .invite-code{
+    margin:22px auto 6px; display:inline-block; font-family:'Baloo 2',sans-serif; font-weight:800;
+    font-size:30px; letter-spacing:6px; color:var(--violet); background:var(--page-bg);
+    border:2px dashed var(--border); border-radius:14px; padding:8px 18px;
+  }
+  .invite-hint{font-size:13.5px !important; color:var(--text-3) !important; margin-bottom:22px;}
+  .invite-btn{
+    display:block; width:100%; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:17px;
+    color:#fff; background:var(--violet); border:none; border-bottom:4px solid var(--violet-dark);
+    border-radius:16px; padding:15px 20px; text-decoration:none; margin-top:10px;
+  }
+  .invite-btn.secondary{background:var(--card-bg); color:var(--violet-dark); border:2px solid var(--border); border-bottom-width:4px;}
+  .invite-stores{display:flex; gap:10px; margin-top:10px;}
+  .invite-stores .invite-btn{font-size:15px; padding:13px 10px; margin-top:0;}
+  .invite-error{display:none; color:var(--red); font-weight:700;}
+</style>
+</head>
+<body>
+<main class="invite-page">
+  <div class="invite-card">
+    <img class="invite-logo" src="/assets/logo.png" alt="Tarteel" width="72" height="72">
+    <h1 id="title">Rejoins-moi sur Tarteel</h1>
+    <p id="subtitle">Un ami t'invite à apprendre le Coran ensemble.</p>
+
+    <div id="codeBlock">
+      <div class="invite-code" id="code">——————</div>
+      <p class="invite-hint" id="hint">Si l'app ne s'ouvre pas, saisis ce code dans Amis → Ajouter un ami.</p>
+      <a class="invite-btn" id="openBtn" href="#">Ouvrir dans Tarteel</a>
+    </div>
+    <p class="invite-error" id="error">Ce lien d'invitation n'est pas valide.</p>
+
+    <p class="invite-hint" id="noApp" style="margin:22px 0 0">Pas encore l'app ? Télécharge-la :</p>
+    <div class="invite-stores">
+      <a class="invite-btn secondary" href="https://apps.apple.com/us/app/tarteel/id6795987191" rel="noopener">App Store</a>
+      <a class="invite-btn secondary" href="https://play.google.com/store/apps/details?id=com.tarteel.sn" rel="noopener">Google Play</a>
+    </div>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var en = !/^fr/i.test(navigator.language || 'fr');
+    if (en) {
+      document.documentElement.lang = 'en';
+      document.title = 'Join me on Tarteel';
+      document.getElementById('title').textContent = 'Join me on Tarteel';
+      document.getElementById('subtitle').textContent = 'A friend invites you to learn the Quran together.';
+      document.getElementById('hint').textContent = "If the app doesn't open, enter this code in Friends → Add a friend.";
+      document.getElementById('openBtn').textContent = 'Open in Tarteel';
+      document.getElementById('error').textContent = 'This invitation link is not valid.';
+      document.getElementById('noApp').textContent = "Don't have the app yet? Download it:";
+    }
+
+    // /f/<code> : code Amis à 6 caractères (lien partagé depuis l'app).
+    // /f/<jeton> plus long : invitation générée par le serveur → page de l'API.
+    var param = decodeURIComponent((location.pathname.split('/f/')[1] || '').split('/')[0] || '').trim();
+    if (/^[A-Za-z0-9]{6}$/.test(param)) {
+      var code = param.toUpperCase();
+      var deepLink = 'tarteel://add?code=' + code;
+      document.getElementById('code').textContent = code;
+      document.getElementById('openBtn').href = deepLink;
+      // Tentative d'ouverture automatique : sans effet si l'app n'est pas installée,
+      // la page reste affichée avec le code et les boutons des stores.
+      setTimeout(function () { window.location.href = deepLink; }, 300);
+    } else if (/^[A-Za-z0-9_-]{16,}$/.test(param)) {
+      window.location.replace('https://api-tarteel.lab.dexchange.group/f/' + encodeURIComponent(param));
+    } else {
+      document.getElementById('codeBlock').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+    }
+  })();
+</script>
+</body>
+</html>
