@@ -2,98 +2,246 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#6B4DFF">
 <title>Rejoins-moi sur Tarteel</title>
 <meta name="description" content="Un ami t'invite sur Tarteel pour apprendre le Coran ensemble.">
 <meta property="og:title" content="Rejoins-moi sur Tarteel">
-<meta property="og:description" content="Apprenons le Coran ensemble : ajoute-moi en ami sur Tarteel.">
+<meta property="og:description" content="Apprenons le Coran ensemble : voici mon code Amis.">
 <meta property="og:image" content="https://tarteel.sn/assets/logo.png">
 <meta property="og:type" content="website">
+<link rel="icon" href="/assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-<!-- Chemins absolus : la page est servie sous /f/<code> (réécriture vercel.json). -->
-<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+<!-- Page autonome servie sous /f/<code> (réécriture vercel.json) : chemins absolus. -->
 <style>
-  .invite-page{max-width:460px; margin:0 auto; padding:56px 20px 72px; text-align:center;}
-  .invite-card{
-    background:var(--card-bg); border:1px solid var(--border); border-radius:24px;
-    padding:36px 28px 30px; box-shadow:0 30px 60px -30px rgba(20,15,60,.18);
+  :root{
+    --violet:#6B4DFF; --violet-deep:#4A2FB8; --violet-soft:#8B5CF6;
+    --lilac:#EDE8FF; --gold:#F6B100; --ink:#1B2333; --ink-2:#5A6072; --ink-3:#8A8F99;
+    --paper:#F7F6FB; --card:#FFFFFF; --line:#E4E1F0;
   }
-  .invite-logo{width:72px; height:72px; border-radius:18px; margin:0 auto 18px; display:block;}
-  .invite-page h1{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(24px,5vw,30px); color:var(--text); margin-bottom:8px;}
-  .invite-page p{color:var(--text-2); font-size:15.5px; line-height:1.6; font-weight:600;}
-  .invite-code{
-    margin:22px auto 6px; display:inline-block; font-family:'Baloo 2',sans-serif; font-weight:800;
-    font-size:30px; letter-spacing:6px; color:var(--violet); background:var(--page-bg);
-    border:2px dashed var(--border); border-radius:14px; padding:8px 18px;
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#F2F1F7; --ink-2:#B9B6C8; --ink-3:#8C8AA0; --paper:#13121A; --card:#1E1C28; --line:#2E2B3B; --lilac:#2A2440; }
   }
-  .invite-hint{font-size:13.5px !important; color:var(--text-3) !important; margin-bottom:22px;}
-  .invite-btn{
-    display:block; width:100%; font-family:'Baloo 2',sans-serif; font-weight:800; font-size:17px;
-    color:#fff; background:var(--violet); border:none; border-bottom:4px solid var(--violet-dark);
-    border-radius:16px; padding:15px 20px; text-decoration:none; margin-top:10px;
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Nunito',system-ui,sans-serif; background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; min-height:100vh;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:12px;}
+
+  /* En-tête : même dégradé et filet doré que les écrans de l'app. */
+  .band{
+    position:relative; overflow:hidden; color:#fff; text-align:center;
+    background:linear-gradient(135deg,var(--violet-soft),var(--violet) 55%,var(--violet-deep));
+    padding:40px 20px 88px; border-radius:0 0 32px 32px;
   }
-  .invite-btn.secondary{background:var(--card-bg); color:var(--violet-dark); border:2px solid var(--border); border-bottom-width:4px;}
-  .invite-stores{display:flex; gap:10px; margin-top:10px;}
-  .invite-stores .invite-btn{font-size:15px; padding:13px 10px; margin-top:0;}
-  .invite-error{display:none; color:var(--red); font-weight:700;}
+  .band::before{ /* trame géométrique discrète (étoile à 8 branches) */
+    content:""; position:absolute; inset:0; opacity:.11;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23fff' stroke-width='1.2'%3E%3Crect x='16' y='16' width='24' height='24'/%3E%3Crect x='16' y='16' width='24' height='24' transform='rotate(45 28 28)'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .band > *{position:relative;}
+  .logo{width:56px; height:56px; border-radius:16px; box-shadow:0 8px 24px rgba(20,10,60,.3);}
+  .eyebrow{margin-top:18px; font-weight:800; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; opacity:.85;}
+  h1{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(28px,7.5vw,36px); line-height:1.08; margin-top:6px;}
+  .rule{width:46px; height:3px; border-radius:2px; background:var(--gold); margin:12px auto 0;}
+  .lede{margin:12px auto 0; max-width:300px; font-weight:700; font-size:15.5px; line-height:1.5; opacity:.92;}
+
+  main{max-width:440px; margin:-64px auto 0; padding:0 16px 40px; position:relative;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:24px; padding:22px 18px 18px; box-shadow:0 24px 48px -28px rgba(30,20,90,.35);}
+  .card + .card{margin-top:14px;}
+  .label{font-weight:800; font-size:13px; color:var(--ink-3); text-align:center;}
+
+  /* Signature : le code en 6 cases, comme le champ « Ajouter un ami » de l'app. */
+  .tiles{display:flex; justify-content:center; gap:7px; margin:12px 0 4px; border:0; background:none; width:100%; cursor:pointer; font:inherit; color:inherit;}
+  .tile{
+    width:min(13vw,48px); aspect-ratio:4/5; display:grid; place-items:center;
+    font-family:'Baloo 2',sans-serif; font-weight:800; font-size:clamp(22px,6.4vw,28px); color:var(--violet);
+    background:var(--lilac); border:2px solid transparent; border-bottom-width:4px; border-bottom-color:rgba(107,77,255,.35); border-radius:12px;
+    opacity:0; transform:translateY(8px); animation:drop .42s cubic-bezier(.2,.8,.3,1.2) forwards;
+  }
+  @media (prefers-color-scheme: dark){ .tile{color:#C9BDFF;} }
+  @keyframes drop{to{opacity:1; transform:none;}}
+  .copied .tile{border-color:var(--violet);}
+  .tap{display:block; text-align:center; font-weight:700; font-size:13px; color:var(--ink-3); min-height:18px;}
+
+  .btn{
+    display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:54px;
+    font-family:'Baloo 2',sans-serif; font-weight:800; font-size:18px; text-decoration:none; border-radius:16px;
+    color:#fff; background:var(--violet); border:none; border-bottom:4px solid var(--violet-deep); margin-top:14px; cursor:pointer;
+  }
+  .btn:active{transform:translateY(2px); border-bottom-width:2px;}
+  .btn svg{width:20px; height:20px; flex:none;}
+  .btn.store{background:var(--ink); border-bottom-color:#000; font-size:16.5px;}
+  @media (prefers-color-scheme: dark){ .btn.store{background:#F2F1F7; color:#13121A; border-bottom-color:#B9B6C8;} }
+  .stores{display:grid; gap:10px;}
+  .stores.two{grid-template-columns:1fr 1fr;}
+  .stores .btn{margin-top:0;}
+
+  h2{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:20px;}
+  .steps{list-style:none; margin:12px 0 16px; display:grid; gap:12px; counter-reset:s;}
+  .steps li{display:flex; gap:12px; align-items:flex-start; font-weight:700; font-size:15px; line-height:1.45; color:var(--ink-2); counter-increment:s;}
+  .steps li::before{
+    content:counter(s); flex:none; width:28px; height:28px; border-radius:9px; display:grid; place-items:center;
+    background:var(--lilac); color:var(--violet); font-family:'Baloo 2',sans-serif; font-weight:800; font-size:15px;
+  }
+  .steps b{color:var(--ink);}
+  .desktop-note{font-weight:700; font-size:14px; color:var(--ink-2); text-align:center; margin-bottom:12px; display:none;}
+
+  .verse{text-align:center; margin-top:26px; color:var(--ink-3);}
+  .verse .ar{font-family:'Scheherazade New',serif; font-weight:700; font-size:26px; color:var(--ink-2); direction:rtl; line-height:1.6;}
+  .verse p{font-weight:700; font-size:13px; margin-top:2px;}
+
+  .invalid{display:none; text-align:center;}
+  .invalid p{color:var(--ink-2); font-weight:700; line-height:1.5; margin:8px 0 4px;}
+
+  @media (prefers-reduced-motion: reduce){ .tile{animation:none; opacity:1; transform:none;} }
 </style>
 </head>
 <body>
-<main class="invite-page">
-  <div class="invite-card">
-    <img class="invite-logo" src="/assets/logo.png" alt="Tarteel" width="72" height="72">
-    <h1 id="title">Rejoins-moi sur Tarteel</h1>
-    <p id="subtitle">Un ami t'invite à apprendre le Coran ensemble.</p>
+<header class="band">
+  <img class="logo" src="/assets/logo.png" alt="Tarteel" width="56" height="56">
+  <p class="eyebrow" data-t="eyebrow">Invitation</p>
+  <h1 data-t="title">Apprenons le Coran ensemble</h1>
+  <div class="rule" aria-hidden="true"></div>
+  <p class="lede" data-t="lede">Un ami t'invite sur Tarteel. Ajoute-le en ami pour suivre vos progrès et vous lancer des défis.</p>
+</header>
 
-    <div id="codeBlock">
-      <div class="invite-code" id="code">——————</div>
-      <p class="invite-hint" id="hint">Si l'app ne s'ouvre pas, saisis ce code dans Amis → Ajouter un ami.</p>
-      <a class="invite-btn" id="openBtn" href="#">Ouvrir dans Tarteel</a>
-    </div>
-    <p class="invite-error" id="error">Ce lien d'invitation n'est pas valide.</p>
+<main>
+  <section class="card" id="codeCard">
+    <p class="label" id="codeLabel" data-t="codeLabel">Son code Amis</p>
+    <button class="tiles" id="tiles" type="button" aria-describedby="tapHint"></button>
+    <span class="tap" id="tapHint" data-t="tap">Touche le code pour le copier</span>
+    <a class="btn" id="openBtn" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20c0-3.4 2.8-6.2 6.2-6.2s6.2 2.8 6.2 6.2"/><path d="M19 8v6M16 11h6"/></svg>
+      <span data-t="open">Ouvrir Tarteel et l'ajouter</span>
+    </a>
+  </section>
 
-    <p class="invite-hint" id="noApp" style="margin:22px 0 0">Pas encore l'app ? Télécharge-la :</p>
-    <div class="invite-stores">
-      <a class="invite-btn secondary" href="https://apps.apple.com/us/app/tarteel/id6795987191" rel="noopener">App Store</a>
-      <a class="invite-btn secondary" href="https://play.google.com/store/apps/details?id=com.tarteel.sn" rel="noopener">Google Play</a>
+  <section class="card" id="installCard">
+    <h2 data-t="noApp">Pas encore l'app ?</h2>
+    <ol class="steps">
+      <li><span data-t="s1">Installe <b>Tarteel</b>, c'est gratuit.</span></li>
+      <li><span data-t="s2">Dans l'app : <b>Profil → ⚙ Paramètres → Amis → Ajouter un ami</b>.</span></li>
+      <li><span data-t="s3">Saisis le code ci-dessus : vous êtes amis.</span></li>
+    </ol>
+    <p class="desktop-note" id="desktopNote" data-t="desktop">Ouvre ce lien sur ton téléphone pour ajouter ton ami directement.</p>
+    <div class="stores" id="stores">
+      <a class="btn store" id="appStore" href="https://apps.apple.com/us/app/tarteel/id6795987191" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.8c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.5-1-2.4-3.9ZM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3Z"/></svg>
+        App Store
+      </a>
+      <a class="btn store" id="playStore" href="https://play.google.com/store/apps/details?id=com.tarteel.sn" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3 13.4 12l-9.8 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1Zm11 8.5 2.6-2.6 3.3 1.9c.9.5.9 1.8 0 2.3l-3.3 1.9-2.6-2.6L13.4 12l1.2-1.2ZM4.6 1.7l11.4 6.5-2.4 2.4L4.6 1.7Zm9 11.7 2.4 2.4-11.4 6.5 9-8.9Z"/></svg>
+        Google Play
+      </a>
     </div>
-  </div>
+  </section>
+
+  <section class="card invalid" id="invalidCard">
+    <h2 data-t="badTitle">Ce lien ne contient pas de code</h2>
+    <p data-t="badText">Demande à ton ami de te renvoyer son lien, ou saisis son code dans l'app : Profil → ⚙ Paramètres → Amis → Ajouter un ami.</p>
+    <a class="btn" href="/" data-t="badCta">Découvrir Tarteel</a>
+  </section>
+
+  <footer class="verse">
+    <div class="ar" lang="ar">وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ</div>
+    <p data-t="verse">« Entraidez-vous dans la bonté et la piété. » — Al-Mâ'ida, 5:2</p>
+  </footer>
 </main>
 
 <script>
   (function () {
+    var EN = {
+      eyebrow: 'Invitation',
+      title: "Let's learn the Quran together",
+      lede: 'A friend invited you to Tarteel. Add them as a friend to follow each other’s progress and take on challenges.',
+      codeLabel: 'Their Friends code',
+      tap: 'Tap the code to copy it',
+      copied: 'Code copied',
+      open: 'Open Tarteel and add them',
+      noApp: "Don't have the app yet?",
+      s1: 'Install <b>Tarteel</b>, it’s free.',
+      s2: 'In the app: <b>Profile → ⚙ Settings → Friends → Add a friend</b>.',
+      s3: 'Enter the code above: you’re friends.',
+      desktop: 'Open this link on your phone to add your friend directly.',
+      badTitle: "This link doesn't contain a code",
+      badText: 'Ask your friend to send their link again, or enter their code in the app: Profile → ⚙ Settings → Friends → Add a friend.',
+      badCta: 'Discover Tarteel',
+      verse: '“Help one another in righteousness and piety.” — Al-Ma’ida, 5:2',
+      docTitle: 'Join me on Tarteel'
+    };
+    var FR_COPIED = 'Code copié';
     var en = !/^fr/i.test(navigator.language || 'fr');
     if (en) {
       document.documentElement.lang = 'en';
-      document.title = 'Join me on Tarteel';
-      document.getElementById('title').textContent = 'Join me on Tarteel';
-      document.getElementById('subtitle').textContent = 'A friend invites you to learn the Quran together.';
-      document.getElementById('hint').textContent = "If the app doesn't open, enter this code in Friends → Add a friend.";
-      document.getElementById('openBtn').textContent = 'Open in Tarteel';
-      document.getElementById('error').textContent = 'This invitation link is not valid.';
-      document.getElementById('noApp').textContent = "Don't have the app yet? Download it:";
+      document.title = EN.docTitle;
+      document.querySelectorAll('[data-t]').forEach(function (el) {
+        var v = EN[el.getAttribute('data-t')];
+        if (v) el.innerHTML = v;
+      });
     }
 
-    // /f/<code> : code Amis à 6 caractères (lien partagé depuis l'app).
-    // /f/<jeton> plus long : invitation générée par le serveur → page de l'API.
-    var param = decodeURIComponent((location.pathname.split('/f/')[1] || '').split('/')[0] || '').trim();
-    if (/^[A-Za-z0-9]{6}$/.test(param)) {
-      var code = param.toUpperCase();
-      var deepLink = 'tarteel://add?code=' + code;
-      document.getElementById('code').textContent = code;
-      document.getElementById('openBtn').href = deepLink;
-      // Tentative d'ouverture automatique : sans effet si l'app n'est pas installée,
-      // la page reste affichée avec le code et les boutons des stores.
-      setTimeout(function () { window.location.href = deepLink; }, 300);
-    } else if (/^[A-Za-z0-9_-]{16,}$/.test(param)) {
-      window.location.replace('https://api-tarteel.lab.dexchange.group/f/' + encodeURIComponent(param));
-    } else {
-      document.getElementById('codeBlock').style.display = 'none';
-      document.getElementById('error').style.display = 'block';
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+    var android = /Android/i.test(ua);
+
+    // Bouton du store adapté au téléphone ; sur ordinateur, les deux + conseil.
+    var stores = document.getElementById('stores');
+    if (ios) document.getElementById('playStore').remove();
+    else if (android) document.getElementById('appStore').remove();
+    else {
+      stores.classList.add('two');
+      document.getElementById('desktopNote').style.display = 'block';
+      document.getElementById('openBtn').style.display = 'none';
     }
+
+    // /f/<code> : code Amis à 6 caractères. /f/<jeton> plus long : invitation
+    // générée par le serveur → page de l'API.
+    var param = decodeURIComponent((location.pathname.split('/f/')[1] || '').split('/')[0] || '').trim();
+    if (/^[A-Za-z0-9_-]{16,}$/.test(param)) {
+      window.location.replace('https://api-tarteel.lab.dexchange.group/f/' + encodeURIComponent(param));
+      return;
+    }
+    if (!/^[A-Za-z0-9]{6}$/.test(param)) {
+      document.getElementById('codeCard').style.display = 'none';
+      document.getElementById('installCard').style.display = 'none';
+      document.getElementById('invalidCard').style.display = 'block';
+      return;
+    }
+
+    var code = param.toUpperCase();
+    var tiles = document.getElementById('tiles');
+    tiles.setAttribute('aria-label', (en ? 'Code ' : 'Code ') + code.split('').join(' '));
+    code.split('').forEach(function (ch, i) {
+      var t = document.createElement('span');
+      t.className = 'tile';
+      t.setAttribute('aria-hidden', 'true');
+      t.style.animationDelay = (80 + i * 60) + 'ms';
+      t.textContent = ch;
+      tiles.appendChild(t);
+    });
+
+    var hint = document.getElementById('tapHint');
+    tiles.addEventListener('click', function () {
+      var done = function () {
+        tiles.classList.add('copied');
+        hint.textContent = en ? EN.copied : FR_COPIED;
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, function () {});
+      } else {
+        var r = document.createRange(); r.selectNodeContents(tiles);
+        var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { document.execCommand('copy'); done(); } catch (e) {}
+      }
+    });
+
+    var deepLink = 'tarteel://add?code=' + code;
+    document.getElementById('openBtn').href = deepLink;
+    // Sur téléphone : tentative d'ouverture automatique de l'app. Sans effet si
+    // elle n'est pas installée — la page reste là avec le code et le store.
+    if (ios || android) setTimeout(function () { window.location.href = deepLink; }, 600);
   })();
 </script>
 </body>
