@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["XJ6GTF5K9C.com.tarteel.app"],
+        "components": [
+          { "/": "/f/*", "comment": "Invitation entre amis : ouvre l'app" }
+        ],
+        "appID": "XJ6GTF5K9C.com.tarteel.app",
+        "paths": ["/f/*"]
+      }
+    ]
+  }
+}

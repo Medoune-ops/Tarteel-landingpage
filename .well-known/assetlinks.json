@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tarteel.sn",
+      "sha256_cert_fingerprints": [
+        "36:F0:44:04:0A:EB:1F:8E:61:02:E0:2D:C3:CE:EA:FC:7C:D6:A3:75:CC:5E:C1:84:F2:2D:FC:23:E5:D8:D0:3E"
+      ]
+    }
+  }
+]
